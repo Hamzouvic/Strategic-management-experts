@@ -1,65 +1,112 @@
-*{
-    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
-    --orange-primary-color: #f27024; 
-    --orange-secondary-color: #ff863f; 
+* {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    --orange-primary-color: #f27024;
+    --orange-secondary-color: #ff863f;
     --blue-color: #00445c;
-    --blue-light-color : #efefef;
+    --blue-light-color: #efefef;
+    --white-color: #ffffff;
 }
 
-body,html{
+body, html {
     margin: 0;
     padding: 0;
+    font-size: 14pt;
+    overflow-x: hidden;
 }
-a{
+
+.orange-text {
+    color: var(--orange-primary-color);
+}
+
+.active--link {
+    background-color: var(--orange-secondary-color);
+}
+
+.active--div {
+    background-color: var(--white-color) !important;
+    color: var(--orange-primary-color);
+}
+
+a {
     text-decoration: none;
     color: inherit;
 }
-.container{
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
-.container--header{
+
+.container--flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header{
-    background-color: var(--orange-primary-color);
+header {
+    background-image: url(./img/bg.png), linear-gradient(to left, var(--orange-primary-color) 50%, white 50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80px;
 }
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 header nav a {
     padding: 10px;
     color: white;
     border-radius: 10px;
 }
-header nav a:hover{
+
+.header--logo {
+    display: flex;
+    align-items: center;
+}
+
+.header--logo img {
+    margin-right: 5px;
+}
+
+header nav a:hover {
     background-color: var(--orange-secondary-color);
 }
 
-.container{
+.container {
     position: relative;
 }
-.full--width{
-        width: 100vw;
-        max-height: 200px;
-        overflow: hidden;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+
+.full--width {
+    width: 100vw;
+    max-height: 160px;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
 }
 
-.page--head{
+.full--width img {
+    width: 100%;
+}
+
+.page--head {
     width: fit-content;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    top: -80px;
-    left: 50px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    color: var(--white-color);
 }
-
 
 .page--head div {
     display: flex;
@@ -67,46 +114,147 @@ header nav a:hover{
     border-radius: 17px;
     border: 7px solid white;
 }
-.page--head div img{
+
+.page--head div img {
     padding: 15px;
     background-color: var(--blue-color);
     border-radius: 10px;
 }
-.section--two{
+
+.section--two {
+    margin: -5px 0;
+    padding: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--blue-light-color);
 }
 
 .section--two .content {
-    max-width: 50%;
-}
-.section--two .image{
-    background-color: #999;
-    width: 400px;
-    height: 200px;
+    width: 50%;
 }
 
-.section--three .header{
+.section--two .container .content h1 {
+    color: var(--blue-color);
+    font-size: 30pt;
+}
+
+.section--two .container .content p {
+    margin: 30px 0;
+}
+
+.section--two .image {
+    max-width: fit-content;
+    height: fit-content;
+}
+
+.section--three {
+    padding-bottom: 50px;
+}
+
+.section--three .header {
+    position: relative;
+    top: -20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.section--three .header div{
+
+.section--three .header div {
     padding: 10px 20px;
-    background-color: #88e;
-    border: #ff0 solid 2px
+    background-color: var(--blue-light-color);
+    border: var(--white-color) solid 2px;
+    font-size: 15pt;
+    cursor: pointer;
+    min-width: fit-content;
 }
 
-.section--three .content{
+.section--three .content .one {
     width: 100%;
-    height: 200px;
-    background-color: #88f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section--three .content .one .text {
+    width: 45%;
+}
+
+.section--three .content .one .list {
+    width: 50%;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.section--three .content .one .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 120px;
+    margin: 0;
+    padding: 14px;
+}
+
+.section--three .content .one .list ul li {
+    list-style-image: url(./img/list-style.png);
+    margin: 5px 20px 5px 0;
+}
+
+.section--three .content .one .list ul li:hover {
+    color: var(--orange-primary-color);
+    list-style-image: url(./img/list-style-orange.png) !important;
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ee4;
+    width: 100%;
+    background-color: var(--blue-color);
+    color: white;
+}
+
+@media(max-width: 1000px) {
+    body,html{
+        font-size: 8pt;
+    }
+    .container {
+        margin: 0 10px;
+    }
+    .header--logo {
+        display: none;
+    }
+    header {
+        background-image: unset;
+        background-color: var(--orange-primary-color);
+    }
+    header .container--flex {
+        height: 100%;
+        justify-content: center;
+    }
+    .section--two .container--flex, .section--three .content .one {
+        flex-direction: column;
+        min-width: 10px;
+    }
+    .section--two div .content, .section--three .content .one .text, .section--three .content .one .list {
+        width: 90%;
+    }
+    .section--three .content .one .list ul {
+        flex-direction: column;
+        height: fit-content;
+        align-items: flex-start;
+    }
+}
+
+@media(max-width: 1400px) {
+    .container{
+        padding: 0 10px;
+    }
+    .page--head {
+        top: 0;
+        left: 0;
+    }
+    .page--head div {
+        display: none;
+    }
+    .section--three .header {
+        overflow-x: scroll;
+    }
 }
